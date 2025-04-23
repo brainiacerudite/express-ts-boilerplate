@@ -9,6 +9,7 @@ import compression from "compression";
 import RateLimiterMiddleware from "./middlewares/rateLimiter.middleware";
 import RouteNotFoundMiddleware from "./middlewares/route.middleware";
 import ErrorMiddleware from "./middlewares/error.middleware";
+import { routes } from "./routes";
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(RateLimiterMiddleware);
 
 // register routes
+app.use(routes);
 
 // handle 404 not found
 app.use(RouteNotFoundMiddleware);
