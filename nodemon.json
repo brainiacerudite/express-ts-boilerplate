@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "js,ts,json",
+  "ignore": ["src/logs/*", "src/**/*.{spec,test}.ts"],
+  "exec": "concurrently \"npx tsc --watch\" \"ts-node -r tsconfig-paths/register src/index.ts\""
+}
